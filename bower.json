@@ -1,0 +1,14 @@
+{
+  "name": "react_training",
+  "homepage": "https://github.com/amordvinov/react_training",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
