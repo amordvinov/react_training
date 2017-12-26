@@ -1,27 +1,24 @@
 {
-  "name": "react_training",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amordvinov/react_training.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amordvinov/react_training/issues"
-  },
-  "homepage": "https://github.com/amordvinov/react_training#readme",
+  "name": "tic_tac_toe_game",
+  "version": "0.1.0",
+  "private": true,
   "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-google": "^0.9.1",
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "babel": "^6.23.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "lodash": "^4.17.4",
-    "react": "^16.2.0"
+    "babel": "^6.23.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
