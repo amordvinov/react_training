@@ -11,8 +11,8 @@ const user = {
 };
 
 class Home extends Component {
-  handleClick() {
-    console.log('test');
+  handleClick(clickCount) {
+    console.log('The button was clicked ' + clickCount + ' times');
   }
 
   render() {
@@ -27,7 +27,13 @@ class Home extends Component {
         <p className="Home-intro">
           <CButton
             message={'Click me, ' + user.firstName + ' ' + user.lastName}
-            onClick={() => this.handleClick()}
+            onClick={(clickCount) => this.handleClick(clickCount)}
+          />
+        </p>
+        <p className="Home-intro">
+          <CButton
+            message={'Click me, ' + user.firstName + ' ' + user.lastName}
+            onClick={(clickCount) => this.handleClick(clickCount)}
           />
         </p>
       </div>
