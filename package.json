@@ -37,14 +37,7 @@
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
   "scripts": {
-    "precommit": "lint-staged",
     "start": "webpack --config webpack.config.production.js",
     "dev": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack",
