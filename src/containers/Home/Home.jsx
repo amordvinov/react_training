@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+/* TODO: add paths to package.json */
+import CButton from '../../components/CButton/CButton';
 import './Home.scss';
 
 const formatName = user => `${user.firstName} ${user.lastName}`;
@@ -8,8 +10,11 @@ const user = {
   lastName: 'Doe'
 };
 
-
 class Home extends Component {
+  handleClick() {
+    console.log('test');
+  }
+
   render() {
     return (
       <div className="Home">
@@ -18,6 +23,12 @@ class Home extends Component {
         </header>
         <p className="Home-intro">
           To get started, edit <code>src/Home.js</code> and save to reload.
+        </p>
+        <p className="Home-intro">
+          <CButton
+            message={'Click me, ' + user.firstName + ' ' + user.lastName}
+            onClick={() => this.handleClick()}
+          />
         </p>
       </div>
     );
