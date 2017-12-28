@@ -1,0 +1,30 @@
+.header {
+  background-color: #222;
+  height: 50px;
+  color: white;
+
+  nav {
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+
+    a {
+      flex-grow: 1;
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-weight: bolder;
+      text-align: center;
+      padding-top: 12px;
+      background-color: #B5CDA9;
+    }
+
+    a:nth-child(2) {
+      background-color: #A5C7B7;
+    }
+
+    a:hover {
+      background-color: #DEB0BB;
+    }
+  }
+}

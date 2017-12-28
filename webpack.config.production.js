@@ -8,10 +8,11 @@ const port = process.env.PORT || 3000;
 const outputPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  entry: './src/App.jsx',
+  entry: './src/index.jsx',
   output: {
-    path: __dirname,
-    filename: 'dist/static/bundle.js'
+    path: path.join(__dirname, 'dist', 'static'),
+    filename: 'bundle.js',
+    publicPath: '/static'
   },
   resolve: {
     modules: ['node_modules', './src'],
@@ -46,10 +47,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('dist/static/bundle.css'),
+    new ExtractTextPlugin('bundle.css'),
     new CopyWebpackPlugin([
-      { from: 'public/favicon.ico', to: 'dist/static/favicon.ico' },
-      { from: 'public/manifest.json', to: 'dist/static/manifest.json' }
+      { from: 'public/favicon.ico', to: 'favicon.ico' },
+      { from: 'public/manifest.json', to: 'manifest.json' }
     ]),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -68,7 +69,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      filename: 'dist/index.html',
+      filename: '../index.html',
       template: path.join(__dirname, '/public/index.html'),
       minify: {
         removeComments: true,

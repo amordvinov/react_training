@@ -4,13 +4,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const port = process.env.PORT || 3000;
-const outputPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  entry: './src/App.jsx',
+  context: path.join(__dirname),
+  entry: './src/index.jsx',
   output: {
     path: __dirname,
-    filename: 'dist/bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     modules: ['node_modules', './src'],
