@@ -1,9 +1,21 @@
-.About {
-  margin: 15px;
+@import '../App/App';
 
-  .About-info {
-    width: 100%;
-    color: #1b6d85;
+.about {
+  margin: 100px;
+
+  .about-title {
+    text-align: center;
+    color: $white;
+    font-weight: bolder;
+    text-shadow: $text-shadow;
+    font-size: 2.5em;
+    margin: 0 auto;
+  }
+
+  .about-description {
+    text-align: justify;
     font-size: 1.5em;
+    color: $white;
+    text-shadow: $text-shadow;
   }
 }

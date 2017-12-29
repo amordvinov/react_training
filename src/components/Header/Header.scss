@@ -1,3 +1,5 @@
+@import '../../containers/App/App';
+
 .header {
   background-color: #222;
   height: 50px;
@@ -16,15 +18,15 @@
       font-weight: bolder;
       text-align: center;
       padding-top: 12px;
-      background-color: #B5CDA9;
+      background-color: $purple;
     }
 
     a:nth-child(2) {
-      background-color: #A5C7B7;
+      background-color: $purple;
     }
 
     a:hover {
-      background-color: #DEB0BB;
+      background-color: $body-bg-color;
     }
   }
 }

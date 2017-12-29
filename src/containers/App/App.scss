@@ -1,8 +1,25 @@
+$body-bg-color: #A70043;
+$card-bg-color: #FF6600;
+$purple: #D80202;
+$black: #000000;
+$green: #1ABC9C;
+$white: #fff;
+
+$box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$box-shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+$text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+$border-radius: 5px;
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #F6B4BE;
+  background-color: $body-bg-color;
+}
+
+ul {
+  padding: 0;
 }
 
 li {

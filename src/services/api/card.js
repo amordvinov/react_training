@@ -89,6 +89,17 @@ function update(id, card) {
   }
 }
 
+
+function bulkUpdate(cards) {
+  try {
+    saveCards(cards);
+
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 function destroy(id) {
   let index;
   let localCards = loadCards();
@@ -118,7 +129,11 @@ function destroy(id) {
 }
 
 const CardService = {
-  get, create, update, destroy
+  get,
+  create,
+  update,
+  destroy,
+  bulkUpdate
 };
 
 export default CardService;

@@ -1,0 +1,45 @@
+@import '../../containers/App/App';
+
+.card {
+  height: 100%;
+  position: relative;
+
+  & span {
+    text-decoration: none;
+  }
+
+  .card-title {
+    color: $white;
+    text-shadow: $text-shadow;
+    font-size: 2em;
+    padding: 15px;
+    font-weight: bolder;
+    display: block;
+  }
+
+  .card-description {
+    color: $white;
+    text-shadow: $text-shadow;
+    font-size: 1.5em;
+    max-height: 130px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: justify;
+    padding: 0 15px;
+  }
+
+  .controls {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .fa:hover {
+      color: $purple;
+    }
+  }
+}
