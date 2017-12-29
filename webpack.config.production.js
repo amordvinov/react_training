@@ -49,8 +49,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('bundle.css'),
     new CopyWebpackPlugin([
-      { from: 'public/favicon.ico', to: 'favicon.ico' },
-      { from: 'public/manifest.json', to: 'manifest.json' }
+      { from: 'public/favicon.ico', to: 'favicon.ico' }
     ]),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

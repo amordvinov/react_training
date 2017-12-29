@@ -48,7 +48,7 @@ class CardPage extends Component {
     let cardPageContent = (
       <div />
     );
-    const pageTitle = this.props.card !== undefined && this.props.card.id ? 'Card Info' : 'New card';
+    const pageTitle = this.state.card !== undefined && this.state.card.id ? 'Card Info' : 'New card';
     const { redirect } = this.state;
 
     if (this.state.card) {
