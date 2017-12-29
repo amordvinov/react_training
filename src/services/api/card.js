@@ -26,8 +26,9 @@ const loadCards = (id) => {
 
     if (id !== undefined && id >= 0) {
       let card;
+      const cardId = parseInt(id, 10);
       parsedLocalCards.map((localCard, i) => {
-        if (localCard.id === id) {
+        if (localCard.id === cardId) {
           card = localCard;
         }
       });
@@ -57,6 +58,22 @@ function get(id) {
 function create(card) {
   let localCards = loadCards();
   let result = true;
+  let cardIndex = 1;
+  let existingIds = [];
+
+  localCards.map((localCard) => {
+    const cardId = parseInt(localCard.id, 10);
+
+    if (existingIds.indexOf(cardId) === -1) {
+      existingIds.push(cardId);
+    }
+  });
+
+  if (existingIds.length > 0) {
+    cardIndex = Math.max(...existingIds) + 1;
+  }
+
+  card.id = cardIndex;
 
   localCards.push(card);
 
@@ -74,7 +91,9 @@ function update(id, card) {
   let result = false;
 
   localCards.map((localCard, cardId) => {
-    if (localCard.id === id) {
+    let cardIdInteger = parseInt(id, 10);
+
+    if (localCard.id === cardIdInteger) {
       localCards[cardId] = card;
       result = true;
     }
@@ -89,10 +108,25 @@ function update(id, card) {
   }
 }
 
-
-function bulkUpdate(cards) {
+function save(card) {
   try {
-    saveCards(cards);
+    if (card) {
+      if (card.id) {
+        return update(card.id, card);
+      }
+
+      return create(card);
+    }
+
+    return false;
+  } catch (e) {
+    return false;
+  }
+}
+
+function bulkUpdate(localCards) {
+  try {
+    saveCards(localCards);
 
     return true;
   } catch (e) {
@@ -105,7 +139,9 @@ function destroy(id) {
   let localCards = loadCards();
 
   localCards.map((localCard, cardId) => {
-    if (localCard.id === id) {
+    let cardIdInteger = parseInt(id, 10);
+
+    if (localCard.id === cardIdInteger) {
       index = cardId;
     }
   });
@@ -128,12 +164,23 @@ function destroy(id) {
   }
 }
 
+function getEmptyCard() {
+  return {
+    createdAt: new Date(),
+    description: '',
+    title: '',
+    favorite: false
+  };
+}
+
 const CardService = {
   get,
   create,
   update,
+  save,
   destroy,
-  bulkUpdate
+  bulkUpdate,
+  getEmptyCard
 };
 
 export default CardService;

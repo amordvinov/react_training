@@ -9,7 +9,7 @@ import About from '../../containers/About/About';
 class Main extends Component {
   render() {
     return (
-      <main className="container">
+      <main className="card-container">
         <Switch>
           <Route path='/cards/new' component={CardPage}/>
           <Route path='/cards/:cardId' component={CardPage}/>

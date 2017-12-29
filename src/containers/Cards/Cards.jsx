@@ -1,5 +1,6 @@
 import './Cards.scss';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 /* TODO: add paths to package.json */
@@ -80,5 +81,13 @@ class Cards extends Component {
     );
   }
 }
+
+Cards.propTypes = {
+  cards: PropTypes.array.isRequired
+};
+
+Cards.defaultProps = {
+  cards: []
+};
 
 export default Cards;

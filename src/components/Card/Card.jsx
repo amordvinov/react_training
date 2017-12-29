@@ -1,8 +1,7 @@
 import './Card.scss';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
-import CardService from '../../services/api/card';
 
 class Card extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class Card extends Component {
   }
 
   render() {
-    var favoriteButtonClasses = ['fa', 'fa-2x'];
+    let favoriteButtonClasses = ['fa', 'fa-2x'];
 
     favoriteButtonClasses.push(this.props.card.favorite ? 'fa-heart' : 'fa-heart-o');
 
@@ -38,5 +37,14 @@ class Card extends Component {
     );
   }
 }
+
+Card.propTypes = {
+  card: PropTypes.object.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired
+};
+
+Card.defaultProps = {
+  onToggleFavorite: () => {}
+};
 
 export default Card;

@@ -1,0 +1,21 @@
+@import '../App/App';
+
+.card-page {
+  margin: 100px auto;
+
+  .card-page-title {
+    text-align: center;
+    color: $white;
+    font-weight: bolder;
+    text-shadow: $text-shadow;
+    font-size: 2.5em;
+    margin: 0 auto;
+  }
+
+  .card-page-content {
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
