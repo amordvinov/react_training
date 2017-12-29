@@ -56,10 +56,6 @@ li {
   border-radius: 4px;
 }
 
-.btn:not([disabled]):not(.disabled) {
-  cursor: pointer;
-}
-
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
@@ -116,6 +112,31 @@ li {
   border-color: darken($purple, 10%);
 }
 
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .65;
+}
+
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.error { border: 2px solid $purple; }
+
 .input-group {
   margin: 20px;
 }
@@ -140,7 +161,6 @@ li {
     color: $black;
     background-color: $white;
     background-clip: padding-box;
-    border: 1px solid $body-bg-color;
     font-family: sans-serif;
   }
 }

@@ -44,8 +44,6 @@ class Cards extends Component {
       this.setState({
         cards: cards
       });
-
-      console.log('changed cards', cards);
     }
   }
 
