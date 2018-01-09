@@ -28,5 +28,9 @@
     a:hover {
       background-color: $body-bg-color;
     }
+
+    a.active {
+      background-color: $body-bg-color;
+    }
   }
 }

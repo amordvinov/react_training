@@ -1,7 +1,7 @@
 import './Card.scss';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Card extends Component {
   constructor(props) {
@@ -25,9 +25,9 @@ class Card extends Component {
         <div className="card-description">{this.props.card.description}</div>
         <div className="controls">
           <div className="control-btn">
-            <Link to={'cards/' + this.props.card.id}>
+            <NavLink activeClassName="active" to={'cards/' + this.props.card.id}>
               <i className="fa fa-edit fa-2x"></i>
-            </Link>
+            </NavLink>
           </div>
           <div className="control-btn" onClick={this.handleToggleFavorite}>
             <i className={favoriteButtonClasses.join(' ')}></i>

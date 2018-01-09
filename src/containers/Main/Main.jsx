@@ -11,10 +11,11 @@ class Main extends Component {
     return (
       <main className="card-container">
         <Switch>
-          <Route path='/cards/new' component={CardPage}/>
-          <Route path='/cards/:cardId' component={CardPage}/>
-          <Route path='/about' component={About}/>
           <Route exact path='/' component={Cards}/>
+          <Route path='/cards/new' component={CardPage}/>
+          <Route path='/cards/:cardId(\d)' component={CardPage}/>
+          <Route path='/about' component={About}/>
+          <Route render={() => <h3>Page not found</h3>}/>
           <Redirect from='*' to='/' />
         </Switch>
       </main>

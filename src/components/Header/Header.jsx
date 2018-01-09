@@ -1,6 +1,6 @@
 import './Header.scss';
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props) {
@@ -18,8 +18,8 @@ class Header extends Component {
     return (
       <header className="header">
         <nav>
-          <Link to='/'>View All Cards</Link>
-          <Link to='/about'>About</Link>
+          <NavLink exact activeClassName="active" to='/'>View All Cards</NavLink>
+          <NavLink activeClassName="active" to='/about'>About</NavLink>
         </nav>
       </header>
     );
